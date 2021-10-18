@@ -206,6 +206,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Row(
               children: <Widget>[
                 TextButton(onPressed: () {}, child: const Text("已修复")),
+                TextButton(onPressed: () {}, child: const Text("未修复")),
               ],
               mainAxisAlignment: MainAxisAlignment.center,
             ),
