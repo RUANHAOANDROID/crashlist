@@ -3,7 +3,6 @@
 一个崩溃信息浏览页面
 
 ![423981a7278a97bd4dd5ace84de757a](https://user-images.githubusercontent.com/10151414/137719560-5174fcdb-5c6d-4390-83c2-82919596b87a.png)
-![83e3dcb28941edf33e51816f74b2bdc](https://user-images.githubusercontent.com/10151414/137719584-2a2eca56-15b4-4dfa-bd4a-2273eaf44b2e.png)
 
 ## Getting Started
 
