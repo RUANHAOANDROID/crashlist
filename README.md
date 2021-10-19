@@ -1,6 +1,8 @@
 # crashlist
 
-A new Flutter project.
+一个崩溃信息浏览页面
+
+![423981a7278a97bd4dd5ace84de757a](https://user-images.githubusercontent.com/10151414/137719560-5174fcdb-5c6d-4390-83c2-82919596b87a.png)
 
 ## Getting Started
 
