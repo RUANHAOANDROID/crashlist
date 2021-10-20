@@ -1,4 +1,4 @@
-# crashlist
+# web ui
 
 一个基于Flutter的APP崩溃信息浏览页面
 <table>
