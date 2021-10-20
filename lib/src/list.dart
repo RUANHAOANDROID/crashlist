@@ -20,9 +20,9 @@ class _MyHomePageState extends State<MyHomePage> {
   int pageSize = 10;
   List<CrashInfo> crashList = List.empty(growable: true);
 
-  Future getCrashList(int pageNum, int pageSize) async {
+  Future getCrashList(int pageNum, int pageSize, {int status = 0}) async {
     const String url =
-        "http://:8900/hbshllcj-web/shllcj/api/app_log/query";
+        "http://localhost:8900/hbshllcj-web/shllcj/api/app_log/query";
     var uri = Uri.parse(url);
     Map<String, String> headers = {
       'Content-type': 'application/json; charset=UTF-8',
@@ -31,13 +31,26 @@ class _MyHomePageState extends State<MyHomePage> {
     final response = await http.post(uri,
         body: jsonEncode(<String, String>{
           'pageNum': pageNum.toString(),
-          'pageSize': pageSize.toString()
+          'pageSize': pageSize.toString(),
+          'status': status.toString(),
         }),
         headers: headers);
     if (response.statusCode == 200) {
       List data = json.decode(response.body)['result']['list'];
       setState(() {
         crashList = data.map((e) => CrashInfo.fromJson(e)).toList();
+      });
+    }
+  }
+
+  Future changeCrashStatus(String id, int status) async {
+    String url =
+        'http://localhost:8900/hbshllcj-web/shllcj/api/app_log/update/$id/$status';
+    var uri = Uri.parse(url);
+    final response = await http.post(uri);
+    if (response.statusCode == 200) {
+      setState(() {
+        getCrashList(pageNum, pageSize);
       });
     }
   }
@@ -72,7 +85,11 @@ class _MyHomePageState extends State<MyHomePage> {
         var networkType = Text('${info.networkType}');
         var username = Text('${info.username}');
         var timeOfCrash = Text('${info.timeOfCrash}');
-
+        var crashContext = Text(
+          '${info.carshContent}',
+          style: const TextStyle(color: Colors.black45),
+          maxLines: 1,
+        );
         var cardView = Card(
             elevation: 3.0,
             shape: const RoundedRectangleBorder(
@@ -98,16 +115,19 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 ListTile(
                   leading: const Icon(Icons.error),
-                  title: Text(
-                    '${info.carshContent}',
-                    style: const TextStyle(color: Colors.black45),
-                    maxLines: 1,
-                  ),
+                  title: crashContext,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    TextButton(onPressed: () {}, child: const Text('已解决')),
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 20,right: 20),
+                      child: TextButton(
+                          onPressed: () {
+                            changeCrashStatus('${info.id}', 1);
+                          },
+                          child: const Text('已解决')),
+                    ),
                   ],
                 ),
               ],
@@ -138,8 +158,16 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             Row(
               children: <Widget>[
-                TextButton(onPressed: () {}, child: const Text("已修复")),
-                TextButton(onPressed: () {}, child: const Text("未修复")),
+                TextButton(
+                    onPressed: () {
+                      getCrashList(pageNum, pageSize, status: 0);
+                    },
+                    child: const Text("未修复")),
+                TextButton(
+                    onPressed: () {
+                      getCrashList(pageNum, pageSize, status: 1);
+                    },
+                    child: const Text("已修复")),
               ],
               mainAxisAlignment: MainAxisAlignment.center,
             ),

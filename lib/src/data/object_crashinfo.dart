@@ -36,7 +36,7 @@ class CrashInfo {
 
   factory CrashInfo.fromJson(Map<String, dynamic> json) {
     return CrashInfo(
-      id: json['json'],
+      id: json['id'],
       deviceModel: json['deviceModel'],
       appVersionName: json['appVersionName'],
       uniqueDeviceId: json['uniqueDeviceId'],

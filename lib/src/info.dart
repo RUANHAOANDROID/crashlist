@@ -12,7 +12,7 @@ class CrashInfoPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('crash info')),
+      appBar: AppBar(title: const Text('日志详情')),
       body: Align(
           alignment: Alignment.topLeft,
           child: Padding(
@@ -20,20 +20,20 @@ class CrashInfoPage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('设备型号：${info.deviceModel}'),
-                Text('系统版本号：${info.osVersion}'),
-                Text('网络状态：${info.networkType}'),
-                Text('用户：${info.username}'),
-                Text('错误状态：${info.status}'),
-                Text('App版本号：${info.appVersionCode}'),
-                Text('App版本名称：${info.appVersionName}'),
-                Text('SDK版本号：${info.sdkVersionCode}'),
-                Text('SDK版本名称：${info.sdkVersionName}'),
-                Text('设备唯一识别码：${info.uniqueDeviceId}'),
-                Text('是否是平板：${info.isTablet}'),
-                Text('崩溃时间：${info.timeOfCrash}'),
-                Text('错误状态：${info.errorType}'),
-                Text('${info.carshContent}'),
+                SelectableText('设备型号：${info.deviceModel}'),
+                SelectableText('系统版本号：${info.osVersion}'),
+                SelectableText('网络状态：${info.networkType}'),
+                SelectableText('用户：${info.username}'),
+                SelectableText('错误状态：${info.status}'),
+                SelectableText('App版本号：${info.appVersionCode}'),
+                SelectableText('App版本名称：${info.appVersionName}'),
+                SelectableText('SDK版本号：${info.sdkVersionCode}'),
+                SelectableText('SDK版本名称：${info.sdkVersionName}'),
+                SelectableText('设备唯一识别码：${info.uniqueDeviceId}'),
+                SelectableText('是否是平板：${info.isTablet}'),
+                SelectableText('崩溃时间：${info.timeOfCrash}'),
+                SelectableText('错误状态：${info.errorType}'),
+                SelectableText('${info.carshContent}'),
               ],
             ),
           )),

@@ -15,12 +15,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Crash List',
+      title: 'Crash',
       //routes: {CrashInfoPage.route: (context) => const CrashInfoPage()},
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
-      home: const MyHomePage(title: 'Crash List'),
+      home: const MyHomePage(title: '日志列表'),
     );
   }
 }
