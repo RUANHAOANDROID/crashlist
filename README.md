@@ -1,8 +1,14 @@
 # crashlist
 
 一个崩溃信息浏览页面
-
-![423981a7278a97bd4dd5ace84de757a](https://user-images.githubusercontent.com/10151414/137719560-5174fcdb-5c6d-4390-83c2-82919596b87a.png)
+<table>
+    <tr>
+      <td>
+          <img src="https://user-images.githubusercontent.com/10151414/138066194-154d829e-6723-4157-9a8e-494364b4d0c9.png" alt="hello" style="zoom:67%;"/>             </td>
+      <td>
+          <img src="https://user-images.githubusercontent.com/10151414/138066207-5b3c9e4a-c83f-493b-ae88-f29a8e6b58a8.png" alt="hello" style="zoom:67%;"/>
+      </td>
+</table>
 
 ## Getting Started
 
