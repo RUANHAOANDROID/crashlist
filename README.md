@@ -1,6 +1,6 @@
 # crashlist
 
-一个崩溃信息浏览页面
+一个基于Flutter的APP崩溃信息浏览页面
 <table>
     <tr>
       <td>
