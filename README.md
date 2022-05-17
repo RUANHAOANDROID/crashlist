@@ -2,6 +2,10 @@
 
 一个基于Flutter的APP崩溃信息浏览页面
 <table>
+     <tr>
+       <td align="center">崩溃列表</td>
+       <td align="center">崩溃详情</td>
+    </tr>
     <tr>
       <td>
           <img src="https://user-images.githubusercontent.com/10151414/138066194-154d829e-6723-4157-9a8e-494364b4d0c9.png" alt="hello" style="zoom:80%;"/>             </td>
